@@ -18,7 +18,7 @@ public class LoginController extends BaseController {
     @RequestMapping
     void login(HttpServletResponse response) {
         try {
-            response.sendRedirect("html/login.html");
+            response.sendRedirect("html/index.html");
         } catch (IOException e) {
             e.printStackTrace();
         }
