@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta content="北京爱情海玫瑰文化博览园" name="keywords">
+    <meta content="北京爱情海玫瑰文化博览园 爱情海玫瑰公园 恋爱公园圣地 婚纱摄影基地 北京一日旅游蜜月休闲度假  2016年世界月季洲际大会主园区 婚礼婚庆婚宴婚博场地首选殿堂 月季公园科普基地 古森林博物馆园区 庆典聚会活动场地 婚纱照取景 北京知名景区胜景周边旅游 南苑机场景点 大兴婚庆旅游 十大情侣酒店 情侣主题酒店钟点房" name="description">
+    <title>修改密码</title>
+    <!--base-->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="css/Validform.css">
+    <script type="text/javascript" src="js/Validform.min.js"></script>
+    <!--base end-->
+    <style>
+        body{
+            background: url("images/bj2.png") no-repeat;
+        }
+        .registerform li{
+            padding-bottom:25px;
+            zoom: 1;
+            overflow: hidden;
+        }
+        .registerform .label{
+            display:block;
+            width:73px;
+            margin: 0;
+            font-size: 14px;
+            color: #444444;
+            padding-top: 4px;
+            padding-right: 5px;
+            float: left;
+            text-align: right;
+        }
+        .registerform .inputxt{
+            border: 1px solid #ccc;
+            width:300px;
+            float: left;
+        }
+        .action{
+            margin-top: 40px;
+        }
+        .Validform_checktip{
+            height: 33px;
+            line-height: 33px;
+            margin-left: 0;
+        }
+        .yzmsubinput{
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            border-radius:0
+        }
+        .yzmsub{
+            padding-left: 82px;
+        }
+    </style>
+
+</head>
+<body>
+<!--warrper-->
+<div class="warrper">
+    <!--header-->
+    <div class="header">
+        <div class="w1000 clearFloat">
+            <div class="xglogo floatLeft">
+                <a href=""><img src="images/xglogo.png" alt=""/></a>
+            </div>
+            <div class="nav floatRight">
+                <ul class="clearFloat">
+                    <li>
+                        <a href="" class="xgactive">系统首页</a>
+                    </li>
+                    <li>
+                        <a href="">方案管理</a>
+                    </li>
+                    <li>
+                        <a href="">高考月历</a>
+                    </li>
+                    <li>
+                        <a href="">帮助中心</a>
+                    </li>
+                    <li>
+                        <a href="">个人中心</a>
+                    </li>
+                    <li>
+                        <a href="">修改分数</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--header end-->
+    <!--content-->
+    <div class="content">
+        <div class="w1000">
+            <h3 class="xgh3">当前位置：<a href="">首页</a>&nbsp;>&nbsp;<a href="">个人中心</a>&nbsp;>&nbsp;<a href="">修改密码</a></h3>
+            <div class="clearFloat">
+                <div class="xgleft floatLeft">
+                    <h3 class="xglefth3">个人中心</h3>
+                    <div class="xgleftdiv">
+                        <ul>
+                            <li class="border-d-b-dddddd">
+                                <a href="" class="xgleactive">基本信息</a>
+                            </li>
+                            <li>
+                                <a href="">修改密码</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="xgright floatRight">
+                    <h3 class="xgrighth3">修改密码</h3>
+                    <div class="xgrightcont">
+                        <form class="registerform">
+                            <ul>
+                                <li>
+                                    <label class="label">登录密码：</label>
+                                    <input type="password" value="" name="name" class="inputxt" />
+                                </li>
+                                <li>
+                                    <label class="label">新密码：</label>
+                                    <input type="password" value="" name="userpassword" class="inputxt" />
+                                </li>
+                                <li>
+                                    <label class="label">确认密码：</label>
+                                    <input type="password" value="" name="userpassword2" class="inputxt" />
+                                </li>
+                            </ul>
+                            <div class="action">
+                                <div class="clearFloat">
+                                    <div class="yzmsub floatLeft">
+                                        <input type="submit" value="修改密码" class="yzmsubinput"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <script type="text/javascript">
+                        $(function(){
+                            //$(".registerform").Validform();  //就这一行代码！;
+
+                            var demo=$(".registerform").Validform({
+                                tiptype:3,
+                                label:".label",
+                                showAllError:true,
+                                datatype:{
+                                    "zh1-6":/^[\u4E00-\u9FA5\uf900-\ufa2d]{1,6}$/
+
+                                },
+                                ajaxPost:true
+                            });
+
+                            //通过$.Tipmsg扩展默认提示信息;
+                            //$.Tipmsg.w["zh1-6"]="请输入1到6个中文字符！";
+                            demo.tipmsg.w["zh1-6"]="请输入1到6个中文字符！";
+
+                            demo.addRule([{
+                                ele:".inputxt:eq(0)",
+                                datatype:"*6-20"
+                            },
+                                {
+                                    ele:".inputxt:eq(1)",
+                                    datatype:"*6-20"
+                                },
+                                {
+                                    ele:".inputxt:eq(2)",
+                                    datatype:"*6-20",
+                                    recheck:"userpassword"
+                                }
+                            ]);
+
+                        })
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--content end-->
+</div>
+<!--warrper end-->
+</body>
+</html>

@@ -1,6 +1,5 @@
 package com.bs.create_life.core;
 
-import ch.qos.logback.core.net.SyslogOutputStream;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -31,11 +30,10 @@ public class LoginHandlerInterceptor implements HandlerInterceptor {
         if (httpServletRequest.getRequestURL().toString().contains("login")) {
             return true;
         }
-        if (null == httpServletRequest.getSession().getAttribute(WebAllStatic.USER)) {
-            httpServletResponse.sendRedirect("/html/login.html");
+        /*if (null == httpServletRequest.getSession().getAttribute(WebAllStatic.USER)) {
+            httpServletResponse.sendRedirect("/html/login.ftl");
             return false;
-        }
-
+        }*/
         return true;
     }
 

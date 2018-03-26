@@ -1,0 +1,286 @@
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="css/Validform.css">
+    <script type="text/javascript" src="js/Validform.min.js"></script>
+
+    <!--base end-->
+    <style>
+        body{
+            background: url("images/bj2.png") no-repeat;
+        }
+        .registerform li{
+            padding-bottom:25px;
+            zoom: 1;
+            overflow: hidden;
+        }
+        .registerform .label{
+            display:block;
+            width:73px;
+            margin: 0;
+            font-size: 14px;
+            color: #444444;
+            padding-top: 4px;
+            padding-right: 5px;
+            float: left;
+            text-align: right;
+        }
+        .registerform .inputxt{
+            border: 1px solid #ccc;
+            width:300px;
+            float: left;
+        }
+        .action{
+            margin-top: 40px;
+        }
+        .Validform_checktip{
+            height: 33px;
+            line-height: 33px;
+            margin-left: 0;
+        }
+        .yzmsubinput{
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            border-radius:0
+        }
+        .yzmsub{
+            padding-left: 82px;
+        }
+    </style>
+
+
+
+<!--warrper-->
+<div class="warrper">
+    <!--header-->
+    <div class="header">
+        <div class="w1000 clearFloat">
+            <div class="xglogo floatLeft">
+                <a href=""><img src="images/xglogo.png" alt=""/></a>
+            </div>
+            <div class="nav floatRight">
+                <ul class="clearFloat">
+                    <li>
+                        <a href="" class="xgactive">系统首页</a>
+                    </li>
+                    <li>
+                        <a href="">方案管理</a>
+                    </li>
+                    <li>
+                        <a href="">高考月历</a>
+                    </li>
+                    <li>
+                        <a href="">帮助中心</a>
+                    </li>
+                    <li>
+                        <a href="">个人中心</a>
+                    </li>
+                    <li>
+                        <a href="">修改分数</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--header end-->
+    <!--content-->
+    <div class="content">
+        <div class="w1000">
+            <h3 class="xgh3">当前位置：<a href="">首页</a>&nbsp;>&nbsp;<a href="">个人中心</a>&nbsp;>&nbsp;<a href="">修改密码</a></h3>
+            <div class="clearFloat">
+                <div class="xgleft floatLeft">
+                    <h3 class="xglefth3">个人中心</h3>
+                    <div class="xgleftdiv">
+                        <ul>
+                            <li class="border-d-b-dddddd">
+                                <a href="" class="xgleactive">基本信息</a>
+                            </li>
+                            <li>
+                                <a href="">修改密码</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="xgright floatRight">
+                    <h3 class="xgrighth3">修改密码</h3>
+                    <div class="xgrightcont">
+                        <form class="registerform">
+                            <ul>
+                                <li>
+                                    <label class="label">姓名：</label>
+                                    <input type="text" value="" name="name" class="inputxt" />
+                                </li>
+                                <li>
+                                    <label class="label">性别：</label>
+                                    <div class="floatLeft pt3">
+                                        <input type="radio" value="1" name="gender" id="male" class="pr1" />
+                                        <label for="male" class="rapadd">男</label>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="radio" value="2" name="gender" id="female" class="pr1" />
+                                        <label for="female" class="rapadd">女</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label class="label">文理科：</label>
+                                    <select name="province" class="sewidth">
+                                        <option value="">文理科</option>
+                                        <option value="1">文理科2</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <label class="label">省：</label>
+                                    <select name="province" class="sewidth">
+                                        <option value="">省</option>
+                                        <option value="1">省2</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <label class="label">市：</label>
+                                    <select name="province" class="sewidth">
+                                        <option value="">市</option>
+                                        <option value="1">市2</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <label class="label">区：</label>
+                                    <select name="province" class="sewidth">
+                                        <option value="">区</option>
+                                        <option value="1">区2</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <label class="label">所在学校：</label>
+                                    <input type="text" value="" name="name" class="inputxt" />
+                                </li>
+                                <li>
+                                    <label class="label">联系电话：</label>
+                                    <input type="text" value="" name="name" class="inputxt" />
+                                </li>
+                                <li>
+                                    <label class="label">邮箱：</label>
+                                    <input type="text" value="" name="name" class="inputxt" />
+                                </li>
+                            </ul>
+                            <div class="action">
+                                <div class="clearFloat">
+                                    <div class="yzmsub floatLeft">
+                                        <input type="submit" value="确认" class="yzmsubinput"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <script type="text/javascript">
+                        $(function(){
+                            //$(".registerform").Validform();  //就这一行代码！;
+
+                            var demo=$(".registerform").Validform({
+                                tiptype:3,
+                                label:".label",
+                                showAllError:true,
+                                datatype:{
+                                    "zh1-6":/^[\u4E00-\u9FA5\uf900-\ufa2d]{1,6}$/
+
+                                },
+                                ajaxPost:true
+                            });
+
+                            //通过$.Tipmsg扩展默认提示信息;
+                            //$.Tipmsg.w["zh1-6"]="请输入1到6个中文字符！";
+                            demo.tipmsg.w["zh1-6"]="请输入1到6个中文字符！";
+
+                            demo.addRule([{
+                                ele:".inputxt:eq(0)",
+                                datatype:"*"
+                            },{
+                                ele:"select",
+                                datatype:"*"
+                            },{
+                                ele:".inputxt:eq(1)",
+                                datatype:"*"
+                            },{
+                                ele:".inputxt:eq(2)",
+                                datatype:"m"
+                            },{
+                                ele:".inputxt:eq(3)",
+                                datatype:"e"
+                            }
+
+                            ]);
+
+                        })
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--content end-->
+    <!--footer-->
+    <div class="footer">
+        <div class="footerp">
+            <p>
+                Copyright © 2001-2012 qhyedu.com. All Rights Reserved  北京华清园教育版权所有
+            </p>
+            <p>华清园教育网隶属于北京华清园教育科技发展有限公司  京ICP备05055513号</p>
+            <p>
+                技术支持<a href="http://www.wanhunet.com/">万虎网络</a>
+            </p>
+        </div>
+    </div>
+    <!--footer end-->
+
+    <!--悬浮-->
+    <script src="js/jQuery-jcContact.js" type="text/javascript"></script>
+    <div id="demo2" class="jcContact">
+        <div class="jcConraper bgd-ff">
+            <!-- 自定义部分 -->
+            <div class="addpmwidt">
+                <div class="clearFloat">
+                    <div class="addbjt">
+                        <a href=""><img src="images/adbj.png" alt=""/></a>
+                    </div>
+                </div>
+                <div class="adxfcont">
+                    <h3 class="adxfh3">2016年高考成绩</h3>
+                    <ul class="adxful">
+                        <li class="border-b-dd">
+                            <strong>折合成绩：</strong>652分
+                        </li>
+                        <li class="border-b-dd">
+                            <strong>考生市排名：</strong>1937名
+                        </li>
+                        <li class="border-b-dd">
+                            <strong>浮动范围：</strong>1864-1937名
+                        </li>
+                        <li class="border-b-dd">
+                            <strong>全国加分：</strong>672分
+                        </li>
+                        <li class="border-b-dd">
+                            <strong>排名：</strong>574名
+                        </li>
+                        <li class="">
+                            <strong>加分浮动范围：</strong>535-574名
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 自定义部分 结束 -->
+        </div>
+        <div class="jcConBtn"></div>
+    </div>
+    <script>
+        $(function(){
+            $('#demo2').jcContact({
+                speed:700,
+                position:'top',
+                posOffsetY : 200,
+                btnPosition : 'top',
+                btnPosoffsetY : 44 ,
+                float:'right',
+                Event : "mouseover"
+            });
+        });
+    </script>
+    <!--悬浮 end-->
+</div>
