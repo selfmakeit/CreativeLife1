@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bs.create_life.mapper.UserAccountMapper">
+    <select id="findByUserNameAndPassword" resultType="com.bs.create_life.po.UserAccountPO">
+        SELECT
+        user_name userName,
+        PASSWORD PASSWORD, id id
+        FROM
+        user_account
+        WHERE
+        user_name = #{userName}
+        AND PASSWORD = #{password}
+    </select>
+    <select id="findByUserName" resultType="com.bs.create_life.po.UserAccountPO">
+    SELECT
+    user_name userName,
+    PASSWORD PASSWORD, id id
+    FROM
+    user_account
+    WHERE
+    user_name = #{userName}
+    </select>
+    <insert id="insert">
+        INSERT INTO user_account ( id, user_name, password )
+        VALUES
+	    ( #{id}, #{userName}, #{password} )
+    </insert>
+
+</mapper>
