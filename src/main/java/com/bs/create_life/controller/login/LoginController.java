@@ -38,6 +38,5 @@ public class LoginController extends BaseController {
             request.getSession().setAttribute(WebAllStatic.USER, userAccount);
             return "/index";
         }
-
     }
 }

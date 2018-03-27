@@ -12,16 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginHandlerInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
-        if (httpServletRequest.getRequestURL().toString().endsWith(".js")) {
-            return true;
-        }
-        if (httpServletRequest.getRequestURL().toString().endsWith(".html")) {
-            return true;
-        }
-        if (httpServletRequest.getRequestURL().toString().endsWith(".css")) {
-            return true;
-        }
-        if (httpServletRequest.getRequestURL().toString().contains("images")) {
+
+        if (httpServletRequest.getRequestURL().toString().contains("static")) {
             return true;
         }
         if (httpServletRequest.getRequestURL().toString().contains("register")) {

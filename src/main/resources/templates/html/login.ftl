@@ -29,14 +29,14 @@
                         </div>
                         <div class="modal-body">
                             <section class="box-login v5-input-txt" id="box-login">
-                                <form id="login_form" action="/login/doLogin" method="post" autocomplete="off">
-
+                                <form id="login_form" enctype="multipart/form-data" action="fileUpload/upload"
+                                      method="post" autocomplete="off">
                                     <ul>
                                         <li class="form-group">
                                             <input class="form-control" id="id_account_l"
                                                    maxlength="50" name="userName"
-
                                                    placeholder="请输入邮箱账号/手机号" type="text">
+                                            <input type="file" name="file">
                                         </li>
                                         <li class="form-group">
                                             <input class="form-control" id="id_password_l"

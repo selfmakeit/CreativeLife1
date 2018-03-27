@@ -21,24 +21,19 @@ public class RegisterController extends BaseController {
     RegisterService registerService;
 
     @RequestMapping
-    void register(HttpServletResponse response) {
-        try {
-            response.sendRedirect("html/register.html");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    String register(HttpServletResponse response) {
+
+        return "html/register";
+
     }
 
     @RequestMapping("doRegister")
-    @ResponseBody
-    void register(UserAccountPO userAccountPO, HttpServletRequest httpServletRequest,HttpServletResponse response) {
+
+    String register(UserAccountPO userAccountPO, HttpServletRequest httpServletRequest, HttpServletResponse response) {
         JsonValue register = registerService.Register(userAccountPO.getUserName(), userAccountPO.getPassword());
         if (register.getSuccess()) {
-            try {
-                response.sendRedirect(httpServletRequest.getContextPath() + "html/login.ftl");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            return "html/login";
         }
+        return "html/login";
     }
 }
