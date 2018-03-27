@@ -1,12 +1,13 @@
 package com.bs.create_life.mapper;
 
+import com.bs.create_life.base.BaseMapper;
 import com.bs.create_life.po.UserAccountPO;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;
 
 @Component(value = "userMapper")
 @Mapper
-public interface UserAccountMapper {
+public interface UserAccountMapper extends BaseMapper<UserAccountPO> {
     /**
      * 登陆验证
      *
@@ -23,5 +24,5 @@ public interface UserAccountMapper {
      */
     UserAccountPO findByUserName(String userName);
 
-    Boolean insert(UserAccountPO userAccountPO);
+    Boolean  insert(UserAccountPO userAccountPO);
 }

@@ -1,5 +1,6 @@
 package com.bs.create_life.service.impl;
 
+import com.bs.create_life.base.BaseServiceImpl;
 import com.bs.create_life.mapper.UserAccountMapper;
 import com.bs.create_life.po.UserAccountPO;
 import com.bs.create_life.service.RegisterService;
@@ -9,10 +10,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class RegisterServiceImpl implements RegisterService {
+public class RegisterServiceImpl
+        extends BaseServiceImpl<UserAccountPO, UserAccountMapper>
+        implements RegisterService {
 
     @Autowired
     UserAccountMapper userAccountMapper;
+
+    @Override
+    public void setMapper(UserAccountMapper m) {
+
+    }
 
     @Override
     public JsonValue Register(String userName, String password) {

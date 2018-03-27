@@ -1,8 +1,11 @@
 package com.bs.create_life.controller.file;
 
 import com.bs.create_life.base.BaseController;
+import com.bs.create_life.po.FilePO;
+import com.bs.create_life.service.FileService;
 import com.bs.create_life.util.JsonValue;
 import com.bs.create_life.util.UUIDUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,6 +26,9 @@ public class FileUploadingController extends BaseController {
 
     @Value("${spring.realPath}")
     String realPath;
+
+    @Autowired
+    FileService fileService;
 
     /**
      * 单文件上传
@@ -47,6 +53,10 @@ public class FileUploadingController extends BaseController {
                 out.write(file.getBytes());
                 out.flush();
 
+                FilePO p = new FilePO();
+                p.setRealPath(realPath + name);
+                p.setType(type);
+                fileService.insert(p);
                 return JsonValue.ok();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
@@ -87,9 +97,17 @@ public class FileUploadingController extends BaseController {
             if (!file.isEmpty()) {
                 try {
                     byte[] bytes = file.getBytes();
-                    String name = file.getOriginalFilename();
-                    File saveFile = new File(savePath, name.substring(name.lastIndexOf(".")));
+
+                    String originalFilename = file.getOriginalFilename();
+                    String type = originalFilename.substring(originalFilename.lastIndexOf("."));
+                    String name = UUIDUtil.getUUID() + type;
+
+                    File saveFile = new File(realPath + name);
                     stream = new BufferedOutputStream(new FileOutputStream(saveFile));
+                    FilePO p = new FilePO();
+                    p.setType(type);
+                    p.setRealPath(name);
+                    fileService.insert(p);
                     stream.write(bytes);
                 } catch (Exception e) {
                     return JsonValue.errMessage("第 " + i + " 个文件上传有错误" + e.getMessage());

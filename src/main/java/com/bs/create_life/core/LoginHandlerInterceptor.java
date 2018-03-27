@@ -1,5 +1,6 @@
 package com.bs.create_life.core;
 
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -13,13 +14,15 @@ public class LoginHandlerInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
 
-        if (httpServletRequest.getRequestURL().toString().contains("static")) {
+        String servletPath = httpServletRequest.getServletPath();
+        System.out.println(servletPath + "-------------");
+        if (servletPath.contains("static")) {
             return true;
         }
-        if (httpServletRequest.getRequestURL().toString().contains("register")) {
+        if (servletPath.contains("register")) {
             return true;
         }
-        if (httpServletRequest.getRequestURL().toString().contains("login")) {
+        if (servletPath.contains("login")) {
             return true;
         }
         /*if (null == httpServletRequest.getSession().getAttribute(WebAllStatic.USER)) {
