@@ -10,14 +10,11 @@ import java.io.IOException;
 
 public class BaseController {
 
-    protected HttpServletRequest request;
-
-    protected HttpServletResponse response;
     
     @ExceptionHandler(Exception.class)   //在Controller类中添加该注解方法即可(注意：添加到某个controller，只针对该controller起作用)
     public void exceptionHandler(Exception ex, HttpServletResponse response, HttpServletRequest request) throws IOException {
-        ResultDataDto resultDataDto = new ResultDataDto(ex);
+
         response.setContentType("text/html;charset=utf-8");
-        response.getWriter().write(new Gson().toJson(resultDataDto));
+        response.sendRedirect("");
     }
 }

@@ -1,6 +1,6 @@
-<#assign path="${request.contextPath}">
 <!DOCTYPE html>
 <html lang="zh">
+<#include "common/basePage.ftl">
 <head>
     <base id="ctx" href="${path}">
     <meta charset="UTF-8">
@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href="${path}/static/css/reset.css">
     <link rel="stylesheet" href="${path}/static/css/index.css">
-    <script type="text/javascript" src="${path}/static/jquery2.2.2.min.js"></script>
+
 
 </head>
 <body>
@@ -23,7 +23,7 @@
                     <div class="qhyjyleft floatLeft">
                         <img src="${path}/static/images/qyhjyleft.png" alt=""/>
                     </div>
-                    <div class="qhyjyright floatRight">
+                    <div class="floatRight">
                         <a href="${path}/static/html/2-3wanshan.html">
                             <img src="${path}/static/images/qyhjyrightimg1.png" alt=""/>
                         </a>
@@ -39,4 +39,5 @@
 </div>
 <!--warrper end-->
 </body>
+<script type="text/javascript" src="${path}/static/jquery2.2.2.min.js"></script>
 </html>

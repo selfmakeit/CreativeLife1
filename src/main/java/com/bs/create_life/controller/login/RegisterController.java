@@ -1,4 +1,4 @@
-package com.bs.create_life.controller;
+package com.bs.create_life.controller.login;
 
 import com.bs.create_life.base.BaseController;
 import com.bs.create_life.po.UserAccountPO;
@@ -31,7 +31,7 @@ public class RegisterController extends BaseController {
 
     @RequestMapping("doRegister")
     @ResponseBody
-    void register(UserAccountPO userAccountPO, HttpServletRequest httpServletRequest) {
+    void register(UserAccountPO userAccountPO, HttpServletRequest httpServletRequest,HttpServletResponse response) {
         JsonValue register = registerService.Register(userAccountPO.getUserName(), userAccountPO.getPassword());
         if (register.getSuccess()) {
             try {

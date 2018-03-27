@@ -1,14 +1,15 @@
 ﻿<!DOCTYPE html>
 
 <html>
+<#assign  path=request.contextPath>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
     <meta name="applicable-device" content="pc,mobile">
     <title>登录</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <link rel="stylesheet" type="text/css" href="../bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="${path}/static/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="${path}/static/css/index.css">
 </head>
 
 <body>
@@ -46,7 +47,7 @@
                                     </ul>
 
                                     <p class="good-tips marginB10"><a id="btnForgetpsw" class="fr">忘记密码？</a>还没有账号？<a
-                                            href="/register"  >立即注册</a></p>
+                                            href="/register">立即注册</a></p>
 
                                     <button type="submit" class="btn btn-block  ">
                                         登录
@@ -66,10 +67,10 @@
                     </div>
                 </div>
             </div>
-            <script type="text/javascript" src="../jquery2.2.2.min.js"></script>
-            <script type="text/javascript" src="../bootstrap.min.js"></script>
-            <script type="text/javascript" src="../js/common.js"></script>
-            <script type="text/javascript" src="../js/login.js"></script>
+            <script type="text/javascript" src="${path}/static/jquery2.2.2.min.js"></script>
+            <script type="text/javascript" src="${path}/static/bootstrap.min.js"></script>
+            <script type="text/javascript" src="${path}/static/js/common.js"></script>
+            <script type="text/javascript" src="${path}/static/js/login.js"></script>
             <div style="text-align:center;">
                 <p>更多源码：<a href="http://www.mycodes.net/" target="_blank">源码之家</a></p>
             </div>

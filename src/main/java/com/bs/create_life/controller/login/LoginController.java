@@ -1,4 +1,4 @@
-package com.bs.create_life.controller;
+package com.bs.create_life.controller.login;
 
 import com.bs.create_life.base.BaseController;
 import com.bs.create_life.core.WebAllStatic;
@@ -21,7 +21,7 @@ public class LoginController extends BaseController {
     LoginService loginService;
 
     @RequestMapping
-    String login(HttpServletResponse response, HttpServletRequest httpServletRequest) {
+    String login(HttpServletResponse response, HttpServletRequest request,ModelMap map) {
         return "html/login";
     }
 
